@@ -2,7 +2,7 @@
   remote_user: ec2-user
   become: yes
   tasks:
-  
+
   - name: Update All Packages
     yum:
       name: '*'
@@ -18,7 +18,7 @@
       name: httpd
       state: started
     
- - name: Create The HTML File
+  - name: Create The HTML File
     shell: echo "Hello Frank Nwanze, THANK YOU." > /var/www/html/index.html
     args:
       executable: /bin/bash
