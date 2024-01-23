@@ -1,4 +1,4 @@
 .terraform/
 *.pem
 *.ppk
-terraform.auto.tfvars
+*.auto.tfvars
