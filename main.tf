@@ -6,7 +6,8 @@ resource "aws_instance" "devops" {
   tags = {
     Name = "devops_training"
   }
-  provisioner "local-exec" {
-  command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook --private-key ./keys/ansible_euwest3.pem -i ${aws_instance.devops.public_ip}, playbook.yaml"
+/*provisioner "local-exec" {
+  command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook --private-key .ikeys/ansible_euwest3.pem -i ${aws_instance.devops.public_ip}, playbook.yaml"
 }
+*/
 }
