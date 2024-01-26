@@ -1,0 +1,7 @@
+---
+# handlers file for shell
+
+- name: Reload Apache
+  service:
+    name: httpd
+    state: reloaded
