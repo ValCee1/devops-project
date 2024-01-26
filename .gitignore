@@ -2,10 +2,7 @@
 *.pem
 *.ppk
 *.auto.tfvars
-<<<<<<< HEAD
-=======
 *.swp
 *.hcl
 *.tfstate
 *.backup
->>>>>>> cb2d04e (initial commit)
