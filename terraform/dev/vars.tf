@@ -8,5 +8,9 @@ variable "AWS_ACCESS_KEY" {
 
 variable "AWS_REGION" {
   type    = string
-  default = "eu-west-3"
 }
+
+variable "PATH_TO_PUBLIC_KEY" {
+  default = "devops_training_key.pub"
+}
+
