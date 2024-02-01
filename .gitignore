@@ -6,4 +6,4 @@
 *.hcl
 *.tfstate
 *.backup
-*key*
+*training_key*
