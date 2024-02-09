@@ -2,6 +2,6 @@
   remote_user: ec2-user
   become: yes
   roles:
-  - apache
+  - nginx
   - shell
   - update

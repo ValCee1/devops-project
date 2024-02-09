@@ -14,3 +14,5 @@ variable "PATH_TO_PUBLIC_KEY" {
   default = "devops_training_key.pub"
 }
 
+variable "SSH_PORT" {}
+

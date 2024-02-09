@@ -39,9 +39,9 @@ resource "aws_vpn_connection" "devops_training_vpn" {
   tunnel1_preshared_key = aws_key_pair.devops_training_key.key_name
 }
 
-#create static route to the on-premise network on the AWS VPN side
-resource "aws_vpn_connection_route" "onpremNetwork" {
-  destination_cidr_block = "10.0.0.0/16"
+#create static route to the on-premise network on the AWS VPN side. I will connect through public IP Address
+resource "aws_vpn_connection_route" "myPublicNetwork" {
+  destination_cidr_block = "10.0.1.0/24"
   vpn_connection_id      = aws_vpn_connection.devops_training_vpn.id
 }
 
@@ -65,5 +65,5 @@ output "AWStunnel1IP" {
 
 #output of Tunnel 2 IP address
 output "AWStunnel2IP" {
-  value = aws_vpn_connection.devops_training_vpn.tunnel1_address
+  value = aws_vpn_connection.devops_training_vpn.tunnel2_address
 }

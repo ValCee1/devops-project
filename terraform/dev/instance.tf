@@ -16,7 +16,11 @@ resource "aws_instance" "devops_training_private" {
     volume_size = 8
     delete_on_termination = true
   }
-
+/*
+provisioner "local-exec" {
+  command = "sleep 20; echo ${var.SSH_PORT} >> /etc/ssh/sshd_config;  systemctl restart sshd"
+}
+*/
   tags = {
     Name = "devops_training_private"
     Environment = "development"
@@ -44,6 +48,12 @@ resource "aws_instance" "devops_training_public" {
     volume_size = 8
     delete_on_termination = true
   }
+
+/*
+provisioner "local-exec" {
+  command = "sleep 20; echo ${var.SSH_PORT} >> /etc/ssh/sshd_config;  systemctl restart sshd"
+}
+*/
 
   tags = {
     Name = "devops_training_public"
