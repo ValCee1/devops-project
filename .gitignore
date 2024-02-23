@@ -1,9 +1,11 @@
 .terraform/
 *.pem
 *.ppk
+*.pub
 *.auto.tfvars
 *.swp
 *.hcl
 *.tfstate
 *.backup
 *training_key*
+easy-rsa/
