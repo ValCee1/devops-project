@@ -1,7 +1,7 @@
 #Security Group for devops_training
 resource "aws_security_group" "custom_sg" {
   vpc_id                  = aws_vpc.custom_VPC.id
-  name                    = "custom_sg"
+  name                    = "${var.department}_sg"
   description             = "security group for custom dept"
   revoke_rules_on_delete  = true
   depends_on              = [ aws_vpc.custom_VPC ]

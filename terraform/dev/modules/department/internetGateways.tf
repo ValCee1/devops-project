@@ -10,20 +10,3 @@ resource "aws_internet_gateway" "custom_internet_gw" {
     Department  = "${var.department}"
   }
 }
-/*
-resource "aws_internet_gateway" "marketing_internet_gw" {
-  vpc_id = aws_vpc.marketing_VPC.id
-
-  tags = {
-    Name = "marketing_internet_gw"
-  }
-}
-
-resource "aws_internet_gateway" "finance_internet_gw" {
-  vpc_id = aws_vpc.finance_VPC.id
-
-  tags = {
-    Name = "finance_internet_gw"
-  }
-}
-*/

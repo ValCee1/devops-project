@@ -13,8 +13,13 @@ resource "aws_vpc_peering_connection" "engineering_finance_peer" {
 
 resource "aws_vpc_peering_connection_accepter" "engineering_finance_peer_accepter" {
   vpc_peering_connection_id = aws_vpc_peering_connection.engineering_finance_peer.id
-  depends_on                = [aws_vpc_peering_connection.engineering_finance_peer, module.engineering, module.finance ]
-  auto_accept               = true
+  depends_on                = [aws_vpc_peering_connection.engineering_finance_peer]
+  auto_accept               = true 
+
+  tags = {
+    Name                    = "Engineering_finance_Peer_Accepter"
+    description             = "Peering Acceptance between Engineering and finance"
+  }
 }
 
 resource "aws_vpc_peering_connection_options" "engineering_finance_peer_options" {
