@@ -1,22 +1,100 @@
-variable "ami" {}
+variable "ALL_IPs" {
+  description   = "IP address CIDR and subnet mask for all IP ranges, without exception"
+  type          = string
+  default       = "0.0.0.0/0"
+  
+  }
+
+variable "ami" {
+  description   = "Free tier Amazon-linux ami"
+  type          = string
+  default       = "ami-02ea01341a2884771"  
+  }
 variable "AWS_SECRET_KEY" {
-  type = string
+  description   = "chikere-trainee account secret key"
+  type          = string
+  default       = ""
+  
 }
 variable "AWS_ACCESS_KEY" {
-  type = string
+  description   = "chikere-trainee account access key"
+  type          = string
+  default       = ""
+  
 }
-variable "AWS_REGION" {}
-variable "department" {}
-variable "engineering_subnets" {}
-variable "marketing_subnets" {}
-variable "finance_subnets" {}
-variable "instance_type" {}
-variable "key_name" {}
-variable "no_of_instances" {}
-#variable "openvpn_ami" {}
+variable "AWS_REGION" {
+  description   = "developer environment region"
+  type          = string
+  default       = "eu-west-3"
+  }
+variable "department" {
+  description   = "List of currently available departments"
+  type          = list(string)
+  default       = [""]
+  }
+variable "engineering_subnets" {
+  description   = "List of cidr blocks for Engineering department"
+  type          = map(string)
+  default       = {
+    default     = "10.0.0.0/24"
+    }
+  }
+variable "marketing_subnets" {
+  description   = "List of cidr blocks for Marketing department"
+  type          = map(string)
+  default       = {
+    default     = "10.0.0.0/24"
+    }
+  }
+variable "finance_subnets" {
+  description   = "List of cidr blocks for Finance department"
+  type          = map(string)
+  default       = {
+    default     = "10.0.0.0/24"
+    }
+  }
+variable "instance_type" {
+  description   = "Free-tier instance type for training purposes"
+  type          = string
+  default       = "t2-micro"
+  }
+variable "key_name" {
+  description   = "the name to give my ssh security key"
+  type          = string
+  default       = ""
+  }
+variable "no_of_instances" {
+  description   = "The number of instances to generate using each resource"
+  type          = list(number)
+  default       = [0,1,2]
+  }
 
-variable "PATH_TO_PRIVATE_KEY" {}
-variable "PATH_TO_PUBLIC_KEY" {}
-variable "SSH_PORT" {}
-variable "trustedIPs" {}
-variable "vpc_cidr" {}
+# variable "openvpn_ami" {}
+
+variable "PATH_TO_PRIVATE_KEY" {
+  description   = "path to get to my locally generated private-key"
+  type          = string
+  default       = ""
+  }
+variable "PATH_TO_PUBLIC_KEY" {
+  description   = "path to get to my locally generated public-key"
+  type          = string
+  default       = ""
+  }
+variable "SSH_PORT" {
+  description   = "SSH port in use for the instances. Default is 22"
+  type          = number
+  default       = 22
+  }
+variable "trustedIPs" {
+  description   = ""
+  type          = list(string)
+  default       = [""]
+  }
+variable "vpc_cidr" {
+  description   = ""
+  type          = map(string)
+  default       = {
+    general     = "10.0.0.0/16"
+    }
+  }

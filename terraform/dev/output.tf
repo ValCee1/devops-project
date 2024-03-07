@@ -1,9 +1,18 @@
-
-output "peering_status_eng_fin" {
-    value = aws_vpc_peering_connection.engineering_finance_peer.accept_status
-}
-
-
-output "peering_status_eng_mar" {
-    value = aws_vpc_peering_connection.engineering_marketing_peer.accept_status
-}
+ output "engineering_private_privateIP" {
+   value = aws_instance.engineering_private.private_ip
+ }
+ output "engineering_private_publicIP" {
+   value = aws_instance.engineering_private.public_ip
+ }
+ output "engineering_public_privateIP" {
+   value = aws_instance.engineering_public.private_ip
+ }
+ output "engineering_public_publicIP" {
+   value = aws_instance.engineering_public.public_ip
+ }
+ output "finance_private_privateIP" {
+   value = aws_instance.finance_private.private_ip
+ }
+ output "marketing_private_privateIP" {
+   value = aws_instance.marketing_private.private_ip
+ }
