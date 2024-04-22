@@ -30,6 +30,12 @@ variable "gateway_id" {
   type        = string
   default     = ""
 }
+variable "trustedIPs" {
+  description = ""
+  type        = list(string)
+}
+
+
 
 variable "vpc_id" {
   description = "ID of the chosen vpc"

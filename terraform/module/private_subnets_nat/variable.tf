@@ -1,5 +1,4 @@
-# Variable definitions for VPC module
-
+# Variable definitions for Subnet module
 
 variable "ALL_IPs" {
   description = "IP address CIDR and subnet mask for all IP ranges, without exception"
@@ -7,10 +6,18 @@ variable "ALL_IPs" {
   default     = "0.0.0.0/0"
 
 }
+variable "availability_zone" {
+  description = "Current deployment availability zone"
+  type        = string
+}
+
+variable "cidr_block" {
+  description = "CIDR block for VPC"
+  type        = string
+}
 variable "department" {
   description = "Department of deployment"
   type        = string
-  default     = "general"
 }
 
 variable "environment" {
@@ -18,10 +25,15 @@ variable "environment" {
   type        = string
 }
 
+variable "nat_gateway_id" {
+  description = "Nat Gateway ID"
+  type        = string
+}
 variable "trustedIPs" {
-  description = ""
+  description = "List of permitted ips for the security group"
   type        = list(string)
 }
+
 
 
 variable "vpc_id" {

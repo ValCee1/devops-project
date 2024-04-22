@@ -25,11 +25,16 @@ variable "environment" {
   type        = string
 }
 
-variable "gateway_id" {
-  description = "Internet gateway for all subnets"
+variable "nat_gateway_id" {
+  description = "Nat Gateway ID"
   type        = string
-  default     = ""
 }
+variable "trustedIPs" {
+  description = "List of permitted ips for the security group"
+  type        = list(string)
+}
+
+
 
 variable "vpc_id" {
   description = "ID of the chosen vpc"

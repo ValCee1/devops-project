@@ -1,7 +1,7 @@
 #Security Group for department
-resource "aws_security_group" "general" {
+resource "aws_security_group" "private" {
   vpc_id                 = var.vpc_id
-  name                   = "${var.environment}_General_SG"
+  name                   = "${var.environment}_Private_SG"
   description            = "security group for ${var.environment} vpc"
   revoke_rules_on_delete = true
 
@@ -23,13 +23,12 @@ resource "aws_security_group" "general" {
   }
 
   tags = {
-    Name        = "departmental vpc sg"
+    Name        = "Private Subnet Security Group"
     description = "security group that allows all inbound traffic for selected hosts"
     Department  = "${var.department}"
     Environment = "${var.environment}"
   }
 
-  depends_on = []
 }
 
 

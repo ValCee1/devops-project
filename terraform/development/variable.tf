@@ -27,6 +27,15 @@ variable "AWS_REGION" {
   type        = string
   default     = "eu-west-3"
 }
+variable "ebs_size" {
+  description = "The size of the additional ebs size necessary to add"
+  type        = string
+}
+
+variable "ebs_type" {
+  description = "The size of the additional ebs size necessary to add"
+  type        = string
+}
 
 variable "environment" {
   description = "Current working environment"
