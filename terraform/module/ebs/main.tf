@@ -6,8 +6,8 @@ resource "aws_ebs_volume" "ebs-volume-1" {
   type              = var.ebs_type
 
   tags = {
-    Name        = "${var.environment}-internet-Gateway"
-    description = "NIC for ${var.department} public instance"
+    Name        = "${var.environment}-EBS-volume"
+    description = "Additional storage for instance"
     Department  = "${var.department}"
     Environment = "${var.environment}"
   }

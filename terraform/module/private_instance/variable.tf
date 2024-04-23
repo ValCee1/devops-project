@@ -30,8 +30,8 @@ variable "private_subnet_id" {
   type        = string
 }
 
-variable "security_group_id" {
-  description = "Current security_group"
-  type        = string
+variable "security_group_ids" {
+  description = "Instance security_groups"
+  type        = list(string)
 }
 
