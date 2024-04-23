@@ -15,6 +15,7 @@ finance_subnets = {
   private = "10.0.103.0/24"
   public  = "10.0.3.0/24"
 }
+iam_usernames       = ["emerie", "val"]
 instance_type       = "t2.micro"
 key_name            = "department"
 openvpn_ami         = "ami-07bf5da57dc62b064"

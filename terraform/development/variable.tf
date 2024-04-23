@@ -57,6 +57,11 @@ variable "finance_subnets" {
   description = "List of cidr blocks for Finance department"
   type        = map(string)
 }
+variable "iam_usernames" {
+  description = "List of usernames to be created using iam role"
+  type        = list(string)
+}
+
 variable "instance_type" {
   description = "Free-tier instance type for training purposes"
   type        = string

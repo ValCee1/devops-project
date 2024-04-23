@@ -25,10 +25,6 @@ variable "environment" {
   type        = string
 }
 
-variable "nat_gateway_id" {
-  description = "Nat Gateway ID"
-  type        = string
-}
 variable "trustedIPs" {
   description = "List of permitted ips for the security group"
   type        = list(string)

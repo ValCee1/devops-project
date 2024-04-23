@@ -1,12 +1,12 @@
 
 module "engineering_instance" {
-  source            = "../module/private_instance"
-  ami               = var.ami
-  environment       = var.environment
-  department        = "engineering"
-  security_group_id = module.engineering_private_subnet.sg_id
-  private_subnet_id = module.engineering_private_subnet.subnet_id
-  instance_type     = var.instance_type
+  source             = "../module/private_instance"
+  ami                = var.ami
+  environment        = var.environment
+  department         = "engineering"
+  security_group_ids = [module.engineering_private_subnet.sg_id]
+  private_subnet_id  = module.engineering_private_subnet.subnet_id
+  instance_type      = var.instance_type
 }
 
 module "openVPN_instance" {
