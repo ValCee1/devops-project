@@ -13,16 +13,13 @@ resource "aws_db_instance" "custom" {
   multi_az                = var.multi_az # set to true to have high availability: 2 instances synchronized with each other
   vpc_security_group_ids  = var.instance_sg
   storage_type            = "gp2"
-  backup_retention_period = 30                                                # how long you’re going to keep your backups
-  availability_zone       = aws_subnet.levelupvpc-private-1.availability_zone # prefered AZ
-  skip_final_snapshot     = true                                              # skip final snapshot when doing terraform destroy
+  backup_retention_period = 30                    # how long you’re going to keep your backups
+  availability_zone       = var.availability_zone # prefered AZ
+  skip_final_snapshot     = true                  # skip final snapshot when doing terraform destroy
 
   tags = {
     Name = "${var.db_name}_${var.engine}"
   }
 }
 
-output "rds" {
-  value = aws_db_instance.levelup-mariadb.endpoint
-}
 

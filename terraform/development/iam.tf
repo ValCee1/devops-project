@@ -1,6 +1,6 @@
 module "iam_users" {
   source   = "../module/iam"
-  username = element(var.iam_usernames, count.imndex)
+  username = element(var.iam_usernames, count.index)
   count    = length(var.iam_usernames)
 }
 

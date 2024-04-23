@@ -1,3 +1,8 @@
+variable "availability_zone" {
+  description = "Preferred Availability zone"
+  type        = string
+}
+
 variable "allocated_storage" {
   description = "Database storage size"
   type        = number
@@ -41,4 +46,9 @@ variable "multi_az" {
 variable "subnet_ids" {
   description = "List of subnet ids for the new subnet group"
   type        = list(string)
+}
+
+variable "vpc_id" {
+  description = "ID of the chosen vpc"
+  type        = string
 }

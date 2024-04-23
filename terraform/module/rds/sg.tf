@@ -2,7 +2,7 @@
 #Security Group for MariaDB
 
 resource "aws_security_group" "allow-mariadb" {
-  vpc_id      = aws_vpc.levelupvpc.id
+  vpc_id      = var.vpc_id
   name        = "allow-mariadb"
   description = "security group for Maria DB"
 
