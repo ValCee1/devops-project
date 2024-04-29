@@ -1,7 +1,7 @@
 module "rds" {
   source            = "../module/rds"
   vpc_id            = module.vpc.vpc_id
-  availability_zone = module.engineering_instance.azs # Same availaibility zone as the instance that will access it
+  availability_zone = module.engineering_private_instance.azs # Same availaibility zone as the instance that will access it
   engine            = "mariadb"
   engine_version    = "10"
   instance_class    = var.instance_type

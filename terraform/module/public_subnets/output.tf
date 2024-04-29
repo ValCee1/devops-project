@@ -5,3 +5,6 @@ output "subnet_id" {
 output "sg_id" {
   value = aws_security_group.public.id
 }
+output "gateway_id" {
+  value = aws_internet_gateway.general.id
+}

@@ -25,11 +25,6 @@ variable "environment" {
   type        = string
 }
 
-variable "gateway_id" {
-  description = "Internet gateway for all subnets"
-  type        = string
-  default     = ""
-}
 variable "trustedIPs" {
   description = ""
   type        = list(string)

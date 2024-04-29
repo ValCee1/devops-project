@@ -3,7 +3,7 @@ resource "aws_route_table" "public" {
   vpc_id = var.vpc_id
   route {
     cidr_block = var.ALL_IPs
-    gateway_id = var.gateway_id
+    gateway_id = aws_internet_gateway.general.id
   }
 
   tags = {

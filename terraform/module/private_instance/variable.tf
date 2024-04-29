@@ -30,8 +30,13 @@ variable "private_subnet_id" {
   type        = string
 }
 
+
 variable "security_group_ids" {
   description = "Instance security_groups"
   type        = list(string)
+}
+variable "sh_script" {
+  description = "Desired line of code"
+  type        = string
 }
 

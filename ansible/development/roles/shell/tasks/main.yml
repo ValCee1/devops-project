@@ -1,0 +1,8 @@
+---
+# tasks file for shell
+- name: Create The HTML File
+  shell: echo "Hello Frank Nwanze, THANK YOU." > /var/www/html/index.html
+  args:
+    executable: /bin/bash
+  notify:
+    - Reload Apache

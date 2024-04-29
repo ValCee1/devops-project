@@ -4,6 +4,7 @@ resource "aws_instance" "private" {
   key_name               = var.key_name
   vpc_security_group_ids = var.security_group_ids # Security Group
   subnet_id              = var.private_subnet_id  # private subnet
+  user_data              = var.sh_script
 
   root_block_device {
     volume_size           = 8
@@ -11,7 +12,7 @@ resource "aws_instance" "private" {
   }
 
   tags = {
-    Name        = "${var.environment} Public Instance"
+    Name        = "Private ${var.environment} Instance"
     Environment = "${var.environment}"
     Application = "web-${var.environment} "
     Subnet      = "private"
