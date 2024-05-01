@@ -21,7 +21,7 @@ key_name            = "department"
 openvpn_ami         = "ami-07bf5da57dc62b064"
 PATH_TO_PUBLIC_KEY  = "devops_training_key.pub"
 PATH_TO_PRIVATE_KEY = "devops_training_key"
-SSH_PORT            = 22
-trustedIPs          = ["196.251.243.156/30"]
+SSH_PORT            = 12890
+trustedIPs          = ["196.251.243.156/30", "10.0.0.0/16"]
 
 vpc_cidr = "10.0.0.0/16"

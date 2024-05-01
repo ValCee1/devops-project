@@ -4,7 +4,6 @@ variable "ALL_IPs" {
   description = "IP address CIDR and subnet mask for all IP ranges, without exception"
   type        = string
   default     = "0.0.0.0/0"
-
 }
 variable "availability_zone" {
   description = "Current deployment availability zone"
@@ -25,6 +24,10 @@ variable "environment" {
   type        = string
 }
 
+variable "SSH_PORT" {
+  description = "Custom SSH Port"
+  type        = number
+}
 variable "trustedIPs" {
   description = ""
   type        = list(string)

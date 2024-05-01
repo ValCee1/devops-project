@@ -90,15 +90,12 @@ variable "PATH_TO_PUBLIC_KEY" {
 variable "SSH_PORT" {
   description = "SSH port in use for the instances. Default is 22"
   type        = number
-  default     = 22
 }
 variable "trustedIPs" {
   description = ""
   type        = list(string)
-  default     = [""]
 }
 variable "vpc_cidr" {
   description = "Custom cidr block for my vpc"
   type        = string
-  default     = "10.0.0.0/16"
 }

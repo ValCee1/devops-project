@@ -21,3 +21,8 @@ data "aws_ami" "latest_amazon_linux" {
 data "aws_vpc" "default_vpc" {
   default = true
 }
+
+data "aws_ip_ranges" "european_ec2" {
+  regions  = [var.AWS_REGION]
+  services = ["ec2_instance_connect"]
+}

@@ -22,6 +22,11 @@ variable "environment" {
   type        = string
 }
 
+variable "instance_connect_ip" {
+  description = "List of IPs that can access openVPN admin"
+  type        = list(string)
+}
+
 
 variable "vpc_id" {
   description = "ID of the chosen vpc"

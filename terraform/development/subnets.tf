@@ -7,4 +7,5 @@ module "engineering_private_subnet" {
   cidr_block        = lookup(var.engineering_subnets, "private")
   department        = "engineering"
   trustedIPs        = var.trustedIPs
+  SSH_PORT          = var.SSH_PORT
 }

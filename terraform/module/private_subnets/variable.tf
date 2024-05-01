@@ -25,6 +25,10 @@ variable "environment" {
   type        = string
 }
 
+variable "SSH_PORT" {
+  description = "Custom SSH Port"
+  type        = number
+}
 variable "trustedIPs" {
   description = "List of permitted ips for the security group"
   type        = list(string)

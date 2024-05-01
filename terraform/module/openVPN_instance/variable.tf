@@ -1,7 +1,6 @@
 variable "ami" {
   description = "Free tier Amazon-linux ami"
   type        = string
-  default     = "ami-07bf5da57dc62b064"
 }
 variable "azs" {
   description = "Availability zone for open VPN"
@@ -14,7 +13,17 @@ variable "environment" {
 variable "instance_type" {
   description = "Free-tier instance type for training purposes"
   type        = string
-  default     = "t2.micro"
+}
+
+variable "key_name" {
+  description = "the name to give my ssh security key"
+  type        = string
+}
+
+
+variable "instance_connect_ip" {
+  description = "List of IPs that can access openVPN admin"
+  type        = list(string)
 }
 
 variable "vpc_id" {

@@ -22,6 +22,14 @@ resource "aws_security_group" "private" {
     self        = true
   }
 
+  ingress {
+    from_port   = var.SSH_PORT
+    to_port     = var.SSH_PORT
+    protocol    = "tcp"
+    cidr_blocks = var.ALL_IPs
+    description = "Allow all access for trusted IP"
+  }
+
   tags = {
     Name        = "Private Subnet Security Group"
     description = "security group that allows all inbound traffic for selected hosts"

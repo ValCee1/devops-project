@@ -8,7 +8,7 @@ resource "aws_security_group" "openVPN" {
   egress {
     from_port   = 0
     to_port     = 0
-    protocol    = "tcp"
+    protocol    = "-1"
     cidr_blocks = [var.ALL_IPs]
     description = "Permit all outbound traffic"
   }
@@ -16,18 +16,25 @@ resource "aws_security_group" "openVPN" {
   ingress {
     from_port   = 22
     to_port     = 22
-    protocol    = "TCP"
-    cidr_blocks = [var.ALL_IPs]
+    protocol    = "tcp"
+    cidr_blocks = var.instance_connect_ip
     description = "Allow SSH access for all IP"
   }
 
   ingress {
     from_port   = 443
     to_port     = 443
-    protocol    = "-1"
+    protocol    = "tcp"
     cidr_blocks = [var.ALL_IPs]
     description = "Allow https access for ALL IP"
-    self        = true
+  }
+
+  ingress {
+    from_port   = 943
+    to_port     = 943
+    protocol    = "tcp"
+    cidr_blocks = ["196.251.243.156/30"]
+    description = "Allow https access for my IP"
   }
 
   tags = {
