@@ -22,6 +22,14 @@ resource "aws_security_group" "private" {
   }
 
   ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = var.instance_connect_ip
+    description = "Allow SSH access for Instance Connect"
+  }
+
+  ingress {
     from_port   = var.SSH_PORT
     to_port     = var.SSH_PORT
     protocol    = "tcp"

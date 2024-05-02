@@ -3,6 +3,8 @@ resource "aws_elb" "custom-elb" {
   name            = "custom-elb"
   subnets         = var.subnet_ids
   security_groups = [aws_security_group.custom-elb.id]
+  instances       = var.instance_ids
+
 
   listener {
     instance_port     = 80

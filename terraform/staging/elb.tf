@@ -4,8 +4,11 @@ module "elb" {
   vpc_id        = module.vpc.vpc_id
   max_size      = 2
   min_size      = 1
-  subnet_ids    = [module.engineering_private_subnet.subnet_id, module.engineering_public_subnet.subnet_id]
+  subnet_ids    = [module.public_subnet.subnet_id]
   ami           = var.ami
-  sg_id         = [module.engineering_private_subnet.sg_id, module.engineering_public_subnet.sg_id]
+  sg_id         = [module.public_subnet.sg_id]
   instance_type = var.instance_type
+  instance_ids  = [""]
+  trustedIPs    = var.trustedIPs
+  SSH_PORT      = var.SSH_PORT
 }

@@ -25,6 +25,11 @@ variable "environment" {
   type        = string
 }
 
+variable "instance_connect_ip" {
+  description = "List of IPs that can access openVPN admin"
+  type        = list(string)
+}
+
 variable "SSH_PORT" {
   description = "Custom SSH Port"
   type        = number

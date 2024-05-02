@@ -1,8 +1,9 @@
 ALL_IPs    = "0.0.0.0/0"
-ami        = "ami-02ea01341a2884771"
+ami        = "ami-00ac45f3035ff009e"
 AWS_REGION = "eu-west-3"
 ebs_size   = "20"
 ebs_type   = "gps"
+department = "General"
 engineering_subnets = {
   private = "10.0.101.0/24"
   public  = "10.0.1.0/24"

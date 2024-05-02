@@ -1,6 +1,6 @@
 ---
 # tasks file for update
 - name: Update All Packages
-  yum:
+  apt:
     name: '*'
     state: latest

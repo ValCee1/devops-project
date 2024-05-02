@@ -18,7 +18,7 @@ resource "aws_security_group" "openVPN" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = var.instance_connect_ip
-    description = "Allow SSH access for all IP"
+    description = "Allow SSH access for Instance Connect"
   }
 
   ingress {

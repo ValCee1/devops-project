@@ -1,12 +1,14 @@
----
-# tasks file for nginx
-
 - name: Install Nginx
-  yum: 
+  apt: 
     name: nginx
-    state: installed
+    state: latest
 
 - name: Start Nginx
   service:
     name: nginx
     state: started
+
+
+- name: Update Cache
+  apt:
+    update_cache: yes

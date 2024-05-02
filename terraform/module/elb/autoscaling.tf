@@ -13,7 +13,7 @@ resource "aws_autoscaling_group" "custom" {
 
   tag {
     key                 = "Name"
-    value               = "Custom EC2 instance via LB"
+    value               = "LB EC2 instance"
     propagate_at_launch = true
   }
 }

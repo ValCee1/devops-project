@@ -32,10 +32,6 @@ variable "ebs_size" {
   type        = string
 }
 
-variable "department" {
-  description = "The department owning the resource"
-  type        = string
-}
 variable "ebs_type" {
   description = "The size of the additional ebs size necessary to add"
   type        = string
