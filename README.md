@@ -1,2 +1,3 @@
-# devops-project
-My devops training project with Frank
+# Natours Application
+
+Built using modern technologies: node.js, express, mongoDB, mongoose and friends 😁
