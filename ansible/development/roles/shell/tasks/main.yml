@@ -1,6 +1,6 @@
 ---
 # tasks file for shell
 - name: Create The HTML File
-  shell: echo "Hello Frank Nwanze, THANK YOU." > /var/www/html/index.html
+  shell: shutdown -r now
   args:
     executable: /bin/bash

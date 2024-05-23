@@ -1,4 +1,4 @@
-#Routing Table for NAT for departmental private subnet
+#Routing Table for NAT for private subnet
 resource "aws_route_table" "private" {
   vpc_id = var.vpc_id
   route {
@@ -7,8 +7,8 @@ resource "aws_route_table" "private" {
   }
 
   tags = {
-    Name        = "${var.department}-private-route"
-    Department  = "${var.department}"
+    Name = "private-route"
+
     Environment = "${var.environment}"
   }
 

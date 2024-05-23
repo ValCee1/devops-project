@@ -1,5 +1,5 @@
 
-output "ELB" {
+output "ELB_dns_name" {
   value = aws_elb.custom-elb.dns_name
 }
 

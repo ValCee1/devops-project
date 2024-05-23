@@ -3,11 +3,6 @@ variable "ami" {
   type        = string
 }
 
-variable "department" {
-  description = "Department of deployment"
-  type        = string
-}
-
 variable "environment" {
   description = "Current deployment environment"
   type        = string
@@ -22,6 +17,12 @@ variable "key_name" {
   description = "the name to give my ssh security key"
   type        = string
 }
+
+variable "custom_name" {
+  description = "the name to give my new instance"
+  type        = string
+}
+
 variable "private_subnet_id" {
   description = "private subnet_id"
   type        = string

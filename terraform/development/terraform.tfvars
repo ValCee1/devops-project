@@ -1,21 +1,14 @@
 ALL_IPs    = "0.0.0.0/0"
+app_cidr   = "10.0.50.0/24"
 ami        = "ami-00ac45f3035ff009e"
 AWS_REGION = "eu-west-3"
 ebs_size   = "20"
 ebs_type   = "gps"
-department = "General"
-engineering_subnets = {
+subnet_cidr = {
   private = "10.0.101.0/24"
   public  = "10.0.1.0/24"
 }
-marketing_subnets = {
-  private = "10.0.102.0/24"
-  public  = "10.0.2.0/24"
-}
-finance_subnets = {
-  private = "10.0.103.0/24"
-  public  = "10.0.3.0/24"
-}
+
 iam_usernames       = ["emerie", "val"]
 instance_type       = "t2.micro"
 key_name            = "department"

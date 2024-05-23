@@ -1,6 +1,6 @@
 
 
-# Creating Private Subnets in departmental VPC
+# Creating Private Subnets in custom VPC
 resource "aws_subnet" "private" {
   vpc_id                  = var.vpc_id
   cidr_block              = var.cidr_block
@@ -8,8 +8,8 @@ resource "aws_subnet" "private" {
   availability_zone       = var.availability_zone
 
   tags = {
-    Name        = "${var.department}-Private-subnet"
-    Department  = "${var.department}"
+    Name = "Private-subnet"
+
     Environment = "${var.environment}"
   }
 }

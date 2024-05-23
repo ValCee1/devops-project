@@ -6,8 +6,7 @@ resource "aws_network_interface" "private" {
 
 
   tags = {
-    Name        = "${var.department}-Private-NIC"
-    Department  = "${var.department}"
+    Name        = "Private-NIC"
     Environment = "${var.environment}"
   }
 }

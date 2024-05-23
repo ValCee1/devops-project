@@ -8,8 +8,7 @@ resource "aws_subnet" "public" {
   availability_zone       = var.availability_zone
 
   tags = {
-    Name        = "${var.department}-public-subnet"
-    Department  = "${var.department}"
+    Name        = "Custom-public-subnet"
     Environment = "${var.environment}"
   }
 }

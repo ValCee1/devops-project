@@ -14,34 +14,33 @@ resource "aws_security_group" "public" {
   }
 
   ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = var.trustedIPs
-    description = "Allow all access for trusted IP"
-    self        = true
-  }
-
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = var.instance_connect_ip
-    description = "Allow SSH access for Instance Connect"
-  }
-
-  ingress {
     from_port   = var.SSH_PORT
     to_port     = var.SSH_PORT
     protocol    = "tcp"
-    cidr_blocks = [var.ALL_IPs]
-    description = "Allow all access for trusted IP"
+    cidr_blocks = [var.openVPN_ip]
+    description = "Allow SSH access for VPN"
   }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = [var.ALL_IPs]
+    description = "Allow Elastic Load Balancer to listen on port 80"
+  }
+
+  ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = [var.ALL_IPs]
+    description = "Allow Elastic Load Balancer to listen on port 8080"
+  }
+
 
   tags = {
     Name        = "PublicSubnet Security Group"
     description = "security group that allows all inbound traffic for selected hosts"
-    Department  = "${var.department}"
     Environment = "${var.environment}"
   }
 

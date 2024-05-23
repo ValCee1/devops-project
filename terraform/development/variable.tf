@@ -27,15 +27,15 @@ variable "AWS_REGION" {
   type        = string
   default     = "eu-west-3"
 }
+variable "app_cidr" {
+  description = "The cidr_block for app subnet"
+  type        = string
+}
 variable "ebs_size" {
   description = "The size of the additional ebs size necessary to add"
   type        = string
 }
 
-variable "department" {
-  description = "The department owning the resource"
-  type        = string
-}
 variable "ebs_type" {
   description = "The size of the additional ebs size necessary to add"
   type        = string
@@ -47,19 +47,10 @@ variable "environment" {
   default     = "development"
 }
 
-variable "engineering_subnets" {
-  description = "List of cidr blocks for Engineering department"
+variable "subnet_cidr" {
+  description = "List of available cidr blocks"
   type        = map(string)
 
-}
-variable "marketing_subnets" {
-  description = "List of cidr blocks for Marketing department"
-  type        = map(string)
-
-}
-variable "finance_subnets" {
-  description = "List of cidr blocks for Finance department"
-  type        = map(string)
 }
 variable "iam_usernames" {
   description = "List of usernames to be created using iam role"
@@ -74,7 +65,6 @@ variable "instance_type" {
 variable "key_name" {
   description = "the name to give my ssh security key"
   type        = string
-  default     = ""
 }
 variable "openvpn_ami" {
   description = "ami for subscribed openvpn ami"

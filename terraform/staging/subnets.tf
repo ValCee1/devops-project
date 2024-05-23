@@ -27,6 +27,4 @@ module "engineering_public_subnet" {
   vpc_id            = module.vpc.vpc_id
   availability_zone = "module.data.availability_zone[0]"
   cidr_block        = lookup(var.engineering_subnets, "public")
-  department        = "engineering"
-  trustedIPs        = var.trustedIPs
 }

@@ -12,11 +12,7 @@ variable "availability_zone" {
 }
 
 variable "cidr_block" {
-  description = "CIDR block for VPC"
-  type        = string
-}
-variable "department" {
-  description = "Department of deployment"
+  description = "CIDR block for this subnet"
   type        = string
 }
 
@@ -25,21 +21,26 @@ variable "environment" {
   type        = string
 }
 
-variable "instance_connect_ip" {
-  description = "List of IPs that can access openVPN admin"
-  type        = list(string)
+variable "openVPN_ip" {
+  description = "IP address for openVPN"
+  type        = string
+}
+
+variable "DB_PORT" {
+  description = "Database Port for MongoDB"
+  type        = number
 }
 
 variable "SSH_PORT" {
   description = "Custom SSH Port"
   type        = number
 }
-variable "trustedIPs" {
-  description = "List of permitted ips for the security group"
-  type        = list(string)
+
+
+variable "vpc_cidr" {
+  description = "CIDR block for VPC"
+  type        = string
 }
-
-
 
 variable "vpc_id" {
   description = "ID of the chosen vpc"

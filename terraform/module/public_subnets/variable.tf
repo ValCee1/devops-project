@@ -14,30 +14,20 @@ variable "cidr_block" {
   description = "CIDR block for public subnet"
   type        = string
 }
-variable "department" {
-  description = "Department of deployment"
-  type        = string
-}
 
 variable "environment" {
   description = "Current deployment environment"
   type        = string
 }
 
-variable "instance_connect_ip" {
-  description = "List of IPs that can access openVPN admin"
-  type        = list(string)
+variable "openVPN_ip" {
+  description = "IP address for openVPN"
+  type        = string
 }
-
 variable "SSH_PORT" {
   description = "Custom SSH Port"
   type        = number
 }
-variable "trustedIPs" {
-  description = ""
-  type        = list(string)
-}
-
 
 
 variable "vpc_id" {

@@ -12,11 +12,9 @@ resource "aws_instance" "private" {
   }
 
   tags = {
-    Name        = "Private ${var.environment} Instance"
+    Name        = "${var.custom_name}-${var.environment}-Instance"
     Environment = "${var.environment}"
-    Application = "web-${var.environment} "
     Subnet      = "private"
     vpc         = "General-${var.environment} "
-    Department  = "${var.department} "
   }
 }
