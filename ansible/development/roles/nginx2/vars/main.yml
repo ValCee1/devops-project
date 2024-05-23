@@ -1,0 +1,4 @@
+#main.yml
+---
+# vars file for nginx
+service: nginx

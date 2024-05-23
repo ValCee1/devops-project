@@ -14,6 +14,10 @@ output "backend_2_private_ip" {
   value = module.backend_instance_2.private_ip
 }
 
+output "monitoring_private_ip" {
+  value = module.monitoring_instance.private_ip
+}
+
 output "elb_ip" {
   value = module.elb.Instance_IP
 }

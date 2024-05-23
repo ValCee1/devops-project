@@ -1,17 +1,52 @@
-- name: Testiing connection
-  hosts: web-apps
+- name: Ping and update
+  hosts: all
   remote_user: ubuntu # ec2-user
-  become: true
-  become_user: root
 
   tasks:
     - name: Ping hosts
       ansible.builtin.ping:
-
   roles:
     - update
+
+- name: Upload files to backend
+  hosts: backend
+  remote_user: ubuntu # ec2-user
+  become: true
+  become_user: root
+
+  roles:
     - nginx
-    - nodejs
+    - nodejs-latest
     - copy-folder
   vars:
-    node_version: 16
+    folder_dest: "$HOME/Library-app/"
+    folder_src: "$HOME/Documents/Library-app/backend/"
+
+- name: Upload files to frontend
+  hosts: frontend
+  remote_user: ubuntu # ec2-user
+  become: true
+  become_user: root
+
+  roles:
+    - nginx
+    - nodejs-latest
+    - copy-folder
+  vars:
+    folder_dest: "$HOME/Library-app/"
+    folder_src: "$HOME/Documents/Library-app/frontend/"
+
+- name: Set up monitor servers
+  hosts: monitors
+  become: true
+  remote_user: ubuntu # ec2-user
+
+  roles:
+    - prometheus
+    - grafana
+
+- name: install node-exporter
+  hosts: nodeservers
+  become: yes
+  roles:
+    - node-exporter
