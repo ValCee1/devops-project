@@ -1,0 +1,48 @@
+/* frontend/src/pages/css/AdminHomePage.css */
+
+.admin-home-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.error {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.book-list,
+.user-list {
+  margin-bottom: 40px;
+}
+
+.book-item,
+.user-item {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.book-item h3,
+.user-item h3 {
+  margin: 0 0 10px;
+}
+
+.book-item p,
+.user-item p {
+  margin: 5px 0;
+}
+
+.add-book {
+  margin-top: 20px;
+}
+
+.add-book input {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.add-book button {
+  padding: 5px 10px;
+}

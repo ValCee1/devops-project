@@ -1,5 +1,6 @@
 ---
 # defaults file for roles/prometheus
+inventory_hostname: "http://localhost"
 prometheus_dir_configuration: "/etc/prometheus"
 prometheus_retention_time: "365d"
 prometheus_scrape_interval: "30s"

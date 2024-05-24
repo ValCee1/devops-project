@@ -1,6 +1,8 @@
 - name: Ping and update
   hosts: all
   remote_user: ubuntu # ec2-user
+  become: true
+  gather_facts: false
 
   tasks:
     - name: Ping hosts
@@ -16,11 +18,13 @@
 
   roles:
     - nginx
-    - nodejs-latest
+    - nodejs
     - copy-folder
   vars:
-    folder_dest: "$HOME/Library-app/"
-    folder_src: "$HOME/Documents/Library-app/backend/"
+    folder_dest: "/home/ubuntu/Library-app/"
+    folder_src: "backend/"
+    node_version: 22
+    ansible_distribution: "Ubuntu"
 
 - name: Upload files to frontend
   hosts: frontend
@@ -30,11 +34,13 @@
 
   roles:
     - nginx
-    - nodejs-latest
+    - nodejs
     - copy-folder
   vars:
-    folder_dest: "$HOME/Library-app/"
-    folder_src: "$HOME/Documents/Library-app/frontend/"
+    folder_dest: "/home/ubuntu/Library-app/"
+    folder_src: "frontend/"
+    node_version: 22
+    ansible_distribution: "Ubuntu"
 
 - name: Set up monitor servers
   hosts: monitors
@@ -45,8 +51,8 @@
     - prometheus
     - grafana
 
-- name: install node-exporter
+- name: Install node-exporter
   hosts: nodeservers
-  become: yes
+  become: true
   roles:
     - node-exporter

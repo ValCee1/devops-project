@@ -19,9 +19,7 @@ resource "aws_security_group" "public" {
     protocol    = "-1"
     cidr_blocks = var.trustedIPs
     description = "Allow all access for trusted IP"
-    self        = true
   }
-
 
   ingress {
     from_port   = 80

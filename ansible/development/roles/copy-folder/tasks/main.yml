@@ -2,6 +2,5 @@
 # tasks file for copy-folder
 - name: Copy folder
   ansible.builtin.copy:
-    src: " {{folder_src}} "
-    dest: " {{folder_dest}} "
-    remote_src: false
+    src: "{{ folder_src }}"
+    dest: "{{ folder_dest }}"

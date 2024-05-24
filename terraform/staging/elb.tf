@@ -1,14 +1,12 @@
 module "elb" {
-  source        = "../module/elb"
-  key_name      = aws_key_pair.department.key_name
-  vpc_id        = module.vpc.vpc_id
-  max_size      = 2
-  min_size      = 1
-  subnet_ids    = [module.public_subnet.subnet_id]
-  ami           = var.ami
-  sg_id         = [module.public_subnet.sg_id]
-  instance_type = var.instance_type
-  instance_ids  = [""]
-  trustedIPs    = var.trustedIPs
-  SSH_PORT      = var.SSH_PORT
+  source       = "../module/elb"
+  vpc_id       = module.vpc.vpc_id
+  subnet_ids   = [module.app_instance.subnet_id, module.backend_subnet.subnet_id]
+  frontend_ip  = [module.app_instance.private_ip]
+  backend_ip   = [module.backend_instance_1.private_ip, module.backend_instance_2.private_ip]
+  openVPN_ip   = module.openVPN_instance.private_ip
+  instance_ids = [module.backend_instance_1.instance_id, module.backend_instance_2.instance_id]
+  SSH_PORT     = var.SSH_PORT
+  depends_on   = [module.backend_instance_1, module.app_instance, module.openVPN_instance]
+
 }

@@ -9,4 +9,3 @@
   notify:
     - restart "{{ service }}"    # VAR 
 
-    # VAR service
